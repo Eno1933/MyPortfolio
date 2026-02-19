@@ -635,6 +635,47 @@ body.dark-theme{
   transform: translateX(.25rem);
 }
 
+/* Container untuk tombol-tombol */
+.projects__buttons {
+    display: flex;
+    gap: 1.2rem;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-top: 1rem; /* beri jarak dengan judul */
+}
+
+/* Menyesuaikan tampilan tombol agar konsisten */
+.projects__button {
+    display: inline-flex;
+    align-items: center;
+    column-gap: .5rem;
+    color: var(--title-color);
+    font-size: var(--small-font-size);
+    text-decoration: none;
+    transition: color .3s;
+}
+
+.projects__button i {
+    font-size: 1rem;
+    transition: transform .3s;
+}
+
+.projects__button:hover {
+    color: var(--first-color); /* efek hover opsional */
+}
+
+.projects__button:hover i {
+    transform: translateX(.25rem);
+}
+
+/* Responsif untuk layar kecil */
+@media screen and (max-width: 480px) {
+    .projects__buttons {
+        gap: 1rem;
+        justify-content: center;
+    }
+}
+
 /* Swiper class */
 .projects__container .swiper-button-prev::after,
 .projects__container .swiper-button-next::after{
