@@ -668,14 +668,6 @@ body.dark-theme{
     transform: translateX(.25rem);
 }
 
-/* Responsif untuk layar kecil */
-@media screen and (max-width: 480px) {
-    .projects__buttons {
-        gap: 1rem;
-        justify-content: center;
-    }
-}
-
 /* Swiper class */
 .projects__container .swiper-button-prev::after,
 .projects__container .swiper-button-next::after{
