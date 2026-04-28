@@ -262,15 +262,6 @@
                             <h3 class="skills__name">Tailwind</h3>
                             <span class="skills__subtitle">Basic</span>
                         </div>
-
-                        <div class="skills__data">
-                            <div class="skills__blob">
-                                <img src="assets/img/nuxt-2.svg" alt="skills image">
-                            </div>
-
-                            <h3 class="skills__name">NuxtJS</h3>
-                            <span class="skills__subtitle">Basic</span>
-                        </div>
                     </div>
                 </div>
 
@@ -468,15 +459,15 @@
                 <div class="projects__container swiper">
                     <div class="swiper-wrapper">
                         <!--==================== PROJECTS 1 ====================-->
-                        <div class="projects__content swiper-slide">
+                        <div class="projects__content swiper-slide"
+                            data-desc="Convertofy is a powerful online PDF management tool that allows you to merge, split, compress, and convert PDF files with ease. Designed with a clean and intuitive interface, it simplifies your document workflow just like iLovePDF.">
                             <img src="assets/img/convertofy.png" alt="project image" class="projects__img">
-
                             <div>
                                 <span class="projects__subtitle">Web</span>
                                 <h1 class="projects__title">Convertofy</h1>
-
                                 <div class="projects__buttons">
-                                    <a href="https://convertofy.netlify.app" class="projects__button" target="_blank">
+                                    <a href="https://convertofy.netlify.app" class="projects__button projects__view-btn"
+                                        target="_blank">
                                         View <i class="ri-arrow-right-line"></i>
                                     </a>
                                 </div>
@@ -484,15 +475,14 @@
                         </div>
 
                         <!--==================== PROJECTS 2 ====================-->
-                        <div class="projects__content swiper-slide">
+                        <div class="projects__content swiper-slide"
+                            data-desc="MyPortfolio is a modern personal portfolio website designed to highlight my skills, projects, educational background, and contact details. It features a sleek dark/light theme toggle, smooth scrolling animations, and a fully responsive layout to ensure an optimal viewing experience across all devices.">
                             <img src="assets/img/portfolio2.png" alt="project image" class="projects__img">
-
                             <div>
                                 <span class="projects__subtitle">Web</span>
-                                <h1 class="projects__title">Portfolio Web</h1>
-
+                                <h1 class="projects__title">MyPortfolio</h1>
                                 <div class="projects__buttons">
-                                    <a href="#" class="projects__button" target="_blank">
+                                    <a href="#" class="projects__button projects__view-btn" target="_blank">
                                         View <i class="ri-arrow-right-line"></i>
                                     </a>
                                 </div>
@@ -588,6 +578,19 @@
             </div>
         </section>
     </main>
+
+    <!--==================== MODAL ====================-->
+    <div class="modal" id="modal">
+        <div class="modal__content">
+            <i class="ri-close-line modal__close" id="modal-close"></i>
+            <img src="" alt="Project image" class="modal__img" id="modal-img">
+            <h2 class="modal__title" id="modal-title"></h2>
+            <p class="modal__description" id="modal-description"></p>
+            <a href="#" target="_blank" class="modal__button" id="modal-view-btn">
+                View Project <i class="ri-arrow-right-line"></i>
+            </a>
+        </div>
+    </div>
 
     <!--==================== FOOTER ====================-->
     <footer class="footer">
