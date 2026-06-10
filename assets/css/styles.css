@@ -481,6 +481,35 @@ body.dark-theme {
   color: var(--title-color);
 }
 
+/*=============== CV BUTTON ===============*/
+.home__cv-button {
+  display: inline-flex;
+  align-items: center;
+  column-gap: 0.5rem;
+  color: var(--first-color);
+  font-size: var(--small-font-size);
+  font-weight: var(--font-medium);
+  border: 2px solid var(--first-color);
+  padding: 0.5rem 1.25rem;
+  border-radius: 2rem;
+  transition: background 0.3s, color 0.3s;
+  justify-self: center;
+}
+
+.home__cv-button i {
+  font-size: 1rem;
+  transition: transform 0.3s;
+}
+
+.home__cv-button:hover {
+  background-color: var(--first-color);
+  color: #fff;
+}
+
+.home__cv-button:hover i {
+  transform: translateY(2px);
+}
+
 .home__info {
   display: grid;
   row-gap: 2rem;
@@ -1575,5 +1604,11 @@ body.dark-theme {
 
   .footer__copy {
     margin-top: 5rem;
+  }
+}
+
+@media screen and (min-width: 1023px) {
+  .home__cv-button {
+    margin-top: 1rem;
   }
 }
