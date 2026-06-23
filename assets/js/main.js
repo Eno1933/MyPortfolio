@@ -76,30 +76,21 @@ const tabBtns = document.querySelectorAll('.projects__tab-btn');
 const projectsSwiperEl = document.getElementById('projects-swiper');
 const certificatesSwiperEl = document.getElementById('certificates-swiper');
 
-// ✅ Visibility tab Projects/Certificates dikontrol murni lewat class
-//    "swiper-active" (sudah diatur di styles.css). Kita TIDAK menyentuh
-//    style.display lagi, supaya Swiper selalu menghitung ukuran &
-//    posisi slide dengan benar (Swiper akan kacau jika diinisialisasi
-//    atau diukur saat container-nya display: none).
 tabBtns.forEach(btn => {
   btn.addEventListener('click', () => {
     const tab = btn.getAttribute('data-tab');
 
-    // Update active class pada tombol
     tabBtns.forEach(b => b.classList.remove('active-tab'));
     btn.classList.add('active-tab');
 
     if (tab === 'projects') {
-      // Tampilkan Projects, sembunyikan Certificates
       projectsSwiperEl.classList.add('swiper-active');
       certificatesSwiperEl.classList.remove('swiper-active');
     } else {
-      // Tampilkan Certificates, sembunyikan Projects
       certificatesSwiperEl.classList.add('swiper-active');
       projectsSwiperEl.classList.remove('swiper-active');
     }
 
-    // Recalculate ukuran & posisi slide setelah toggle
     if (swiperProjects) swiperProjects.update();
     if (swiperCertificates) swiperCertificates.update();
   });
@@ -168,11 +159,15 @@ const modal = document.getElementById('modal'),
   modalViewBtn = document.getElementById('modal-view-btn'),
   projectsSection = document.getElementById('projects');
 
-const openModal = (imgSrc, title, description, link) => {
+const openModal = (imgSrc, title, description, link, isCertificate = false) => {
   modalImg.src = imgSrc;
   modalTitle.textContent = title;
   modalDescription.textContent = description;
   modalViewBtn.href = link;
+
+  // Sembunyikan tombol "View Project" khusus untuk certificate
+  modalViewBtn.style.display = isCertificate ? 'none' : 'inline-flex';
+
   modal.classList.add('show-modal');
 
   if (swiperProjects && swiperProjects.detachEvents) {
@@ -220,7 +215,10 @@ projectsSection.addEventListener('click', (e) => {
   const description = content.getAttribute('data-desc');
   const link = content.querySelector('.projects__view-btn').href;
 
-  openModal(imgSrc, title, description, link);
+  // Cek apakah konten ini ada di dalam swiper certificates
+  const isCertificate = !!content.closest('#certificates-swiper');
+
+  openModal(imgSrc, title, description, link, isCertificate);
 });
 
 /*=============== SHOW SCROLL UP ===============*/
