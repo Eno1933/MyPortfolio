@@ -459,8 +459,15 @@
             <h2 class="section__title">Projects</h2>
             <span class="section__subtitle">Most recent work</span>
 
+            <!-- TOMBOL TAB -->
+            <div class="projects__tabs">
+                <button class="projects__tab-btn active-tab" data-tab="projects">Projects</button>
+                <button class="projects__tab-btn" data-tab="certificates">Certificates</button>
+            </div>
+
+            <!-- SWIPER PROJECTS -->
             <div class="container section__border">
-                <div class="projects__container swiper">
+                <div class="projects__container swiper swiper-active" id="projects-swiper">
                     <div class="swiper-wrapper">
                         <!--==================== PROJECTS 1 ====================-->
                         <div class="projects__content swiper-slide"
@@ -488,6 +495,64 @@
                                 <div class="projects__buttons">
                                     <a href="#" class="projects__button projects__view-btn" target="_blank">
                                         View <i class="ri-arrow-right-line"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Swiper arrows -->
+                    <div class="swiper-button-prev">
+                        <i class="ri-arrow-left-s-line"></i>
+                    </div>
+                    <div class="swiper-button-next">
+                        <i class="ri-arrow-right-s-line"></i>
+                    </div>
+
+                    <!-- Swiper Pagination -->
+                    <div class="swiper-pagination"></div>
+                </div>
+
+                <!-- SWIPER CERTIFICATES -->
+                <div class="projects__container swiper" id="certificates-swiper">
+                    <div class="swiper-wrapper">
+                        <!-- SERTIFIKAT 1 -->
+                        <div class="projects__content swiper-slide"
+                            data-desc="This certificate is awarded for successfully completing a four-month internship program at Scola LMS, demonstrating practical experience and professional development in the software engineering field.">
+                            <img src="assets/img/certificate1.png" alt="certificate image" class="projects__img">
+                            <div>
+                                <span class="projects__subtitle">Certificate</span>
+                                <h1 class="projects__title">Internship Completion <br>Certificate</h1>
+                                <div class="projects__buttons">
+                                    <a href="assets/pdf/cert1.pdf" class="projects__button projects__view-btn" target="_blank">
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- SERTIFIKAT 2 -->
+                        <div class="projects__content swiper-slide"
+                            data-desc="This certificate confirms that the holder has successfully passed the competency examination in Network Engineering and has been recognized as competent in the field.">
+                            <img src="assets/img/certificate2.png" alt="certificate image" class="projects__img">
+                            <div>
+                                <span class="projects__subtitle">Certificate</span>
+                                <h1 class="projects__title">Certificate of Competency<br> in Network Engineering</h1>
+                                <div class="projects__buttons">
+                                    <a href="assets/pdf/cert2.pdf" class="projects__button projects__view-btn" target="_blank">
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- SERTIFIKAT 3 -->
+                        <div class="projects__content swiper-slide"
+                            data-desc="This certificate, issued by the Indonesian Professional Certification Authority (BNSP), certifies that the holder is competent as a Junior Programmer in Software Development according to national occupational standards.">
+                            <img src="assets/img/certificate3.png" alt="certificate image" class="projects__img">
+                            <div>
+                                <span class="projects__subtitle">Certificate</span>
+                                <h1 class="projects__title">BNSP Certificate of Compe<br>tence – Junior Coder</h1>
+                                <div class="projects__buttons">
+                                    <a href="assets/pdf/cert3.pdf" class="projects__button projects__view-btn" target="_blank">
                                     </a>
                                 </div>
                             </div>

@@ -1379,6 +1379,68 @@ body.dark-theme {
   }
 }
 
+/*=============== PROJECTS TABS ===============*/
+.projects__tabs {
+  display: flex;
+  justify-content: center;
+  column-gap: 1.5rem;
+  margin-bottom: 2rem;
+  position: relative;
+  z-index: 10;                   /* Tombol di atas Swiper */
+}
+
+.projects__tab-btn {
+  background: none;
+  border: 2px solid var(--first-color);
+  color: var(--first-color);
+  padding: 0.6rem 1.8rem;
+  border-radius: 2rem;
+  font-family: var(--body-font);
+  font-size: var(--small-font-size);
+  font-weight: var(--font-medium);
+  cursor: pointer;
+  transition: background 0.3s, color 0.3s;
+}
+
+.projects__tab-btn.active-tab {
+  background-color: var(--first-color);
+  color: #fff;
+}
+
+.projects__tab-btn:hover:not(.active-tab) {
+  background-color: var(--first-color);
+  color: #fff;
+}
+
+/*=============== CONTAINER SWIPER ===============*/
+#projects .container.section__border {
+  position: relative;            /* Penting untuk absolute positioning */
+  /* min-height bisa dihapus atau dipertahankan, tidak berpengaruh */
+}
+
+/*=============== SWIPER VISIBILITY (ABSOLUTE STACK) ===============*/
+.projects__container {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  pointer-events: none;
+  z-index: -1;
+  transition: opacity 0.3s ease;
+}
+
+/* Swiper yang aktif */
+.projects__container.swiper-active {
+  position: relative;            /* Kembali ke flow */
+  opacity: 1;
+  pointer-events: auto;
+  z-index: 1;
+  margin-top: 1.5rem;            /* Jarak dari tombol */
+}
+
+
+
 @media screen and (min-width: 1048px) {
   .container {
     margin-inline: auto;
